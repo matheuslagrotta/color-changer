@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+            margin-bottom: 10px;
+            height: 350px;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <div id="divAlvo">
+        Teste as cores!
+    </div>
+    <input type="button" id="botao" value="Clique para mudar a cor de fundo!">
+    <script>
+
+var botao = document.getElementById('botao');
+var divAlvo = document.getElementById('divAlvo');
+
+
+botao.onclick = function() {
+
+  var randomColor = getRandomColor();
+  divAlvo.style.backgroundColor = randomColor;
+};
+
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+    </script>
+</body>
+</html>
